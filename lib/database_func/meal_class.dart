@@ -2,7 +2,7 @@ class Meal {
   final int? id;
   final String name;
   final String category;
-  final int? calories;
+  final int calories;
   final String ingredients;
 
   const Meal({
@@ -28,7 +28,10 @@ class Meal {
       id: map['id'],
       name: map['name'],
       category: map['category'],
-      calories: map['calories'],
+      calories:
+          map['calories'] != null
+              ? map['calories'] as int
+              : 0, // Provide a default value like 0
       ingredients: map['ingredients'],
     );
   }
